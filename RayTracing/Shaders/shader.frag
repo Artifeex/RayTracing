@@ -189,19 +189,19 @@ void initializeDefaultScene(out STriangle triangles[13], out SSphere spheres[2])
     //triangles[12].MaterialIdx = 7;
     
     //Spheres . . . . . . . . . . . . . . . . .
-    spheres[0].Center = vec3(1.7, 1.0, 0.0);
+    spheres[0].Center = vec3(0.7, 0.0, -2.0);
     spheres[0].Radius = 1.2;
     spheres[0].MaterialIdx = 6;
     
-    spheres[1].Center = vec3(2.5, 0, -3.0);
-    spheres[1].Radius = 2;
+    spheres[1].Center = vec3(-2, -2.5, -1.0);
+    spheres[1].Radius = 1;
     spheres[1].MaterialIdx = 6;
 }
 
 void initializeDefaultLightMaterials(out SLight light, out SMaterial materials[10])
 {
     //** LIGHT **//
-    light.Position = vec3(0.0, 4.9f, 2.5f);
+    light.Position = vec3(0.0, 4f, 0f);
 	
     // coeffs for Phong`s lighting(1-ambient, 2-diffuse, 3-specular,4-dispersion specular(2^10))
     vec4 lightCoefs = vec4(0.5, 0.5, 0.3, 256.0);
@@ -252,9 +252,9 @@ void initializeDefaultLightMaterials(out SLight light, out SMaterial materials[1
     // Spheres material (mirror)
     materials[6].Color = vec3(0.5, 0.5, 0.5);
     materials[6].LightCoeffs = vec4(lightCoefs);
-    materials[6].ReflectionCoef = 0;
-    materials[6].RefractionCoef = 0.5;
-    materials[6].MaterialType = REFRACTION;
+    materials[6].ReflectionCoef = 0.9;
+    materials[6].RefractionCoef = 1;
+    materials[6].MaterialType = REFLECTION;
 
     ///Test material
     //materials[7].Color = vec3(1, 1, 1);
